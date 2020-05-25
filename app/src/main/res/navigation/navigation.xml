@@ -94,5 +94,23 @@
             android:id="@+id/action_rolesFragment_to_addrolesFragment"
             app:destination="@id/addrolesFragment"
             app:popUpTo="@id/guestsFragment" />
+        <action
+            android:id="@+id/action_rolesFragment_to_deleteRoleFragment"
+            app:destination="@id/deleteRoleFragment"
+            app:popUpTo="@id/guestsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteRoleFragment"
+        android:name="com.example.registerzvent.views.delrole.DeleteRoleFragment"
+        android:label="Rol"
+        tools:layout="@layout/delete_role_fragment">
+        <action
+            android:id="@+id/action_deleteRoleFragment_to_rolesFragment"
+            app:destination="@id/rolesFragment"
+            app:popUpTo="@id/titleFragment" />
+        <argument
+        android:name="idRecyclerGuest"
+        app:argType="long"
+        android:defaultValue="0L"/>
     </fragment>
 </navigation>

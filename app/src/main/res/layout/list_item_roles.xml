@@ -7,12 +7,16 @@
         <variable
             name="role"
             type="com.example.registerzvent.database.Roles" />
+        <variable
+            name="clickListener"
+            type="com.example.registerzvent.views.roles.RolesListener"/>
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(role)}">
 
         <ImageView
             android:id="@+id/priority_image"

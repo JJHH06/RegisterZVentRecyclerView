@@ -1,10 +1,7 @@
 package com.example.registerzvent.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
 
 @Dao
@@ -14,6 +11,11 @@ interface GuestRoleDatabaseDao {
 
     @Update
     fun updateRole(role: Roles)
+
+    @Delete
+    fun deleteRole(role: Roles)
+
+
 
     @Query("SELECT * from event_roles_table WHERE eventRolesId = :key")
     fun getRole(key: Long): Roles?
@@ -33,6 +35,10 @@ interface GuestRoleDatabaseDao {
 
     @Update
     fun updateGuest(guest: Guest)
+
+    @Delete
+    fun deleteGuest(guest: Guest)
+
 
     @Query("SELECT * from event_guests_table WHERE eventGuestsId = :key")
     fun getGuest(key: Long): Guest?

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -43,7 +44,12 @@ class rolesFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
-        val adapter = RolesAdapter()
+        val adapter = RolesAdapter(RolesListener { eventRolesId ->
+           // Toast.makeText(context, "${eventRolesId}", Toast.LENGTH_LONG).show()
+            //Aqui navego de una
+            moveToActivity(eventRolesId)
+
+        })
         binding.rolesList.adapter = adapter
 
         viewModel.listaDeRoles.observe(viewLifecycleOwner, Observer {
@@ -64,5 +70,11 @@ class rolesFragment : Fragment() {
         return binding.root
     }
 
+
+    private fun moveToActivity(id: Long){
+        val action = rolesFragmentDirections.actionRolesFragmentToDeleteRoleFragment()
+        action.idRecyclerGuest = id
+        view?.findNavController()?.navigate(action)
+    }
 
 }

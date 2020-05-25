@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/delete_item"
+        android:enabled="true"
+        android:icon="@drawable/eliminar_icono"
+        android:title="@string/app_name"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
+
+</menu>
