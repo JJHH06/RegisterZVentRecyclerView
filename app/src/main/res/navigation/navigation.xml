@@ -77,7 +77,7 @@
     <fragment
         android:id="@+id/addrolesFragment"
         android:name="com.example.registerzvent.views.addroles.addrolesFragment"
-        android:label="fragment_addroles"
+        android:label="Agregar Rol"
         tools:layout="@layout/fragment_addroles" >
         <action
             android:id="@+id/action_addrolesFragment_to_rolesFragment"
@@ -88,7 +88,7 @@
     <fragment
         android:id="@+id/rolesFragment"
         android:name="com.example.registerzvent.views.roles.rolesFragment"
-        android:label="fragment_roles"
+        android:label="Roles"
         tools:layout="@layout/fragment_roles" >
         <action
             android:id="@+id/action_rolesFragment_to_addrolesFragment"

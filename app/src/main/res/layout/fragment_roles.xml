@@ -14,23 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ScrollView
-            android:layout_width="370dp"
-            android:layout_height="380dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.571"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/text_roles_showdown"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{rolesViewModel.listaDeRolesString}"
-                android:textAlignment="inherit" />
-        </ScrollView>
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floating_action_button_add"
             android:layout_width="wrap_content"
@@ -46,6 +29,16 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.958"
             app:srcCompat="@drawable/plus_white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/roles_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/floating_action_button_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
