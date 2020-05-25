@@ -26,10 +26,11 @@ class DeleteRoleViewModel(
 
 
     init {
-        IdRespaldo = roleId
+
         uiScope.launch {
-        //Aqui inicializamos el delete role
-        _selectedRole.value = getSelectedRole(IdRespaldo)}
+            //Aqui inicializamos el delete role
+            _selectedRole.value = getSelectedRole(roleId)}
+        IdRespaldo = roleId
 
     }
 
@@ -40,7 +41,8 @@ class DeleteRoleViewModel(
 
     fun deleteSelectedRole(){
         uiScope.launch {
-            getSelectedRole(IdRespaldo)?.let { deleteRole(it) }
+           // getSelectedRole(IdRespaldo)?.let { deleteRole(it) }
+            deleteRole(selectedRole.value!!)
         }
     }
 
@@ -56,5 +58,6 @@ class DeleteRoleViewModel(
             database.deleteRole(roles)
         }
     }
+
 
 }

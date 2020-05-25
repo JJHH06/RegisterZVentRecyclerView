@@ -57,6 +57,7 @@ class addguestsFragment : Fragment() {
         return binding.root
     }
 
+
     /**
      * Crea el addguest menu
      *

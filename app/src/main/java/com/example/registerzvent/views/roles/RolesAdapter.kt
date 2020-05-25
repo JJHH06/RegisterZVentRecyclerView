@@ -37,16 +37,17 @@ class RolesAdapter(val clickListener: RolesListener): ListAdapter<Roles, RolesAd
             binding.executePendingBindings()
         }
         companion object {
-             fun from(parent: ViewGroup): ViewHolder {
+            fun from(parent: ViewGroup): ViewHolder {
                 val layoutInflater =
                     LayoutInflater.from(parent.context)
-                 val binding = ListItemRolesBinding.inflate(layoutInflater,parent,false)
+                val binding = ListItemRolesBinding.inflate(layoutInflater,parent,false)
                 return ViewHolder(binding)
             }
         }
     }
 
 }
+
 
 class RolesDiffCallback : DiffUtil.ItemCallback<Roles>(){
     override fun areItemsTheSame(oldItem: Roles, newItem: Roles): Boolean {

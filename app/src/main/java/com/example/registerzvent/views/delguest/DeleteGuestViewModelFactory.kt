@@ -17,4 +17,5 @@ class DeleteGuestViewModelFactory(private val dataSource: GuestRoleDatabaseDao,
         throw IllegalArgumentException("Unknown ViewModel class")
     }
 
+
 }

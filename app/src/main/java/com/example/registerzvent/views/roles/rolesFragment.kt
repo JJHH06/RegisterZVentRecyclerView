@@ -45,7 +45,7 @@ class rolesFragment : Fragment() {
         binding.lifecycleOwner = this
 
         val adapter = RolesAdapter(RolesListener { eventRolesId ->
-           // Toast.makeText(context, "${eventRolesId}", Toast.LENGTH_LONG).show()
+            // Toast.makeText(context, "${eventRolesId}", Toast.LENGTH_LONG).show()
             //Aqui navego de una
             moveToActivity(eventRolesId)
 
@@ -65,6 +65,7 @@ class rolesFragment : Fragment() {
                 .navigate(rolesFragmentDirections.actionRolesFragmentToAddrolesFragment())
 
         }
+
 
         // Inflate the layout for this fragment
         return binding.root

@@ -8,7 +8,7 @@ import java.lang.IllegalArgumentException
 
 class RolesViewModelFactory(private val dataSource: GuestRoleDatabaseDao,
                             private val application: Application
-                            ):ViewModelProvider.Factory {
+):ViewModelProvider.Factory {
 
 
     @Suppress("unchecked_cast")

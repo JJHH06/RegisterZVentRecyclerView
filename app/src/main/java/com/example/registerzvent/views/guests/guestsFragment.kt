@@ -49,7 +49,7 @@ class guestsFragment : Fragment() {
         binding.lifecycleOwner = this //Hace que se actualice el databinding cuando es utilizado
 
         val adapter = GuestsAdapter(GuestListener { eventGuestsId ->
-            Toast.makeText(context, "${eventGuestsId}", Toast.LENGTH_LONG).show()
+           // Toast.makeText(context, "${eventGuestsId}", Toast.LENGTH_LONG).show()
             moveToActivity(eventGuestsId)
         })
         binding.guestsList.adapter = adapter

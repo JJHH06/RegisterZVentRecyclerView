@@ -11,6 +11,7 @@ import javax.sql.DataSource
 class AddguestsViewModelFactory(private  val dataSource: GuestRoleDatabaseDao,
                                 private val application: Application): ViewModelProvider.Factory {
 
+
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(AddguestsViewModel::class.java)){
             return AddguestsViewModel(dataSource,application) as T

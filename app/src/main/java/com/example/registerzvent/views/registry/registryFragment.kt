@@ -127,4 +127,5 @@ class registryFragment : Fragment() {
     }
 
 
+
 }

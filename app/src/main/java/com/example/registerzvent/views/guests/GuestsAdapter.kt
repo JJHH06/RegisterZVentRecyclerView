@@ -42,6 +42,7 @@ class GuestsAdapter(val clickListener: GuestListener): ListAdapter<GuestWithRole
 
 }
 
+
 class GuestsDiffCallback: DiffUtil.ItemCallback<GuestWithRole>(){
     override fun areItemsTheSame(oldItem: GuestWithRole, newItem: GuestWithRole): Boolean {
         return oldItem.guest.eventGuestsId == newItem.guest.eventGuestsId

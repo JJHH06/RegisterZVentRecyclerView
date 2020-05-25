@@ -46,6 +46,7 @@ class DeleteGuestFragment : Fragment() {
         setHasOptionsMenu(true)
 
 
+
         return binding.root
     }
 

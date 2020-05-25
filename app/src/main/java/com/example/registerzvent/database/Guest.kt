@@ -12,7 +12,7 @@ import androidx.room.ForeignKey.SET_NULL
         entity = Roles::class,
         parentColumns = ["eventRolesId"],
         childColumns = ["role_of_guestID"],
-        onDelete = SET_NULL)
+        onDelete = ForeignKey.CASCADE)
     ])
 
 data class Guest (

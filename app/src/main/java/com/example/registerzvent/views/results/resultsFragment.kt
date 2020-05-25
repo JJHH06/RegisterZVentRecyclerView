@@ -52,6 +52,7 @@ class resultsFragment : Fragment() {
 
 
 
+
         binding.buttonReset.setOnClickListener { view: View->
             view.findNavController()
                 .navigate(resultsFragmentDirections.actionResultsFragmentToRegistryFragment()) //Navegacion en reinicio

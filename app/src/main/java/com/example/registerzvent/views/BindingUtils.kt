@@ -17,6 +17,7 @@ fun TextView.setRoleDescription(item: Roles){
     text = item.description
 }
 
+
 @BindingAdapter("roleOrderImage")
 fun ImageView.setRoleNameFormatted(item: Roles){
     setImageResource( when (item.rolesOrder) {

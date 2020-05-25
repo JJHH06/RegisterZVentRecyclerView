@@ -99,6 +99,7 @@ class RegistryViewModel(val database: GuestRoleDatabaseDao,
 
 
 
+
     fun progressInList(){
         _invitadoActual.value = actualRegistryGuest()
     }

@@ -30,6 +30,7 @@ class RolesViewModel(
         viewModelJob.cancel()
     }
 
+
     fun formatRoles(listado: List<Roles>): String{
         var resultado = ""
 

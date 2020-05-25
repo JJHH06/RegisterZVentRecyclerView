@@ -25,6 +25,7 @@ class ResultsViewModel(peopleInvited : Int, peopleRegistered : Int , summaryInvi
 
 
 
+
     /**
      * Se inicializan las variables con los parametros, para asi poder se puestas en la vista
      */

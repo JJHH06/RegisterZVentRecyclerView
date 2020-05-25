@@ -20,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
+
             android:text="@{@string/guest_name_format(String.valueOf(deleteGuestViewModel.selectedGuest.name))}"
             android:textColor="@color/design_default_color_on_secondary"
             android:textSize="18sp"

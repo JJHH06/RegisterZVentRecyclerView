@@ -35,7 +35,8 @@ class DeleteGuestViewModel(val database: GuestRoleDatabaseDao,
 
     fun deleteSelectedGuest(){
         uiScope.launch {
-            getSelectedGuest(idRespaldo)?.let { deleteGuest(it) }
+          //  getSelectedGuest(idRespaldo)?.let { deleteGuest(it) }
+            deleteGuest(selectedGuest.value!!)
         }
 
     }
@@ -51,4 +52,5 @@ class DeleteGuestViewModel(val database: GuestRoleDatabaseDao,
             database.deleteGuest(guest)
         }
     }
+
 }

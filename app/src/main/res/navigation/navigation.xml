@@ -113,9 +113,9 @@
             app:destination="@id/rolesFragment"
             app:popUpTo="@id/titleFragment" />
         <argument
-        android:name="idRecyclerGuest"
-        app:argType="long"
-        android:defaultValue="0L"/>
+            android:name="idRecyclerGuest"
+            app:argType="long"
+            android:defaultValue="0L"/>
     </fragment>
     <fragment
         android:id="@+id/deleteGuestFragment"
@@ -125,7 +125,8 @@
         <action
             android:id="@+id/action_deleteGuestFragment_to_guestsFragment"
             app:destination="@id/guestsFragment"
-            app:popUpTo="@id/titleFragment" />
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="false" />
         <argument
             android:name="idRecyclerNewGuest"
             app:argType="long"

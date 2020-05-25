@@ -16,6 +16,7 @@ class AddguestsViewModel(
     private val uiScope = CoroutineScope(Dispatchers.Main+viewModelJob)
 
 
+
     val listadoRoles = database.getAllRoles()
     init {
         Log.i("AddguestsViewModel", "AdguestsViewModel created!")
