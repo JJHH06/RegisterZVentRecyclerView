@@ -9,6 +9,7 @@ import com.example.registerzvent.R
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.example.registerzvent.database.GuestRoleDatabase
@@ -45,6 +46,15 @@ class guestsFragment : Fragment() {
         binding.guestsViewModel = viewModel
 
         binding.lifecycleOwner = this //Hace que se actualice el databinding cuando es utilizado
+
+        val adapter = GuestsAdapter()
+        binding.guestsList.adapter = adapter
+
+        viewModel.listaDeInvitados.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                adapter.submitList(it)
+            }
+        })
 
 
         /**

@@ -1,26 +1,20 @@
 package com.example.registerzvent.views.roles
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+//import android.widget.ListAdapter
+
+import androidx.recyclerview.widget.ListAdapter
+
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.registerzvent.R
 import com.example.registerzvent.database.Roles
+import com.example.registerzvent.databinding.ListItemRolesBinding
 
-class RolesAdapter:RecyclerView.Adapter<RolesAdapter.ViewHolder>() {
-    var data = listOf<Roles>()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
-
-    override fun getItemCount() = data.size
-
-
+class RolesAdapter: ListAdapter<Roles, RolesAdapter.ViewHolder> (RolesDiffCallback()){
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = data[position]
+        val item = getItem(position)
         holder.bind(item)
 
     }
@@ -33,43 +27,31 @@ class RolesAdapter:RecyclerView.Adapter<RolesAdapter.ViewHolder>() {
 
 
 
-    class ViewHolder private constructor(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val roleName: TextView = itemView.findViewById(R.id.role_name)
-        val descriptionString: TextView = itemView.findViewById(R.id.description_string)
-        val priorityImage: ImageView = itemView.findViewById(R.id.priority_image)
+    class ViewHolder private constructor(val binding: ListItemRolesBinding) : RecyclerView.ViewHolder(binding.root){
 
-         fun bind( item: Roles) {
-            val res = itemView.context.resources
-            roleName.text = item.nombre
-            descriptionString.text = item.description
-            priorityImage.setImageResource(
-                when (item.rolesOrder) {
-                    1 -> R.drawable.priority_1
-                    2 -> R.drawable.priority_2
-                    3 -> R.drawable.priority_3
-                    4 -> R.drawable.priority_4
-                    5 -> R.drawable.priority_5
-                    6 -> R.drawable.priority_6
-                    7 -> R.drawable.priority_7
-                    8 -> R.drawable.priority_8
-                    9 -> R.drawable.priority_9
-                    10 -> R.drawable.priority_10
-                    else -> R.drawable.priority_1
-                }
-            )
+        fun bind( item: Roles) {
+            binding.role = item
+            binding.executePendingBindings()
         }
         companion object {
              fun from(parent: ViewGroup): ViewHolder {
                 val layoutInflater =
                     LayoutInflater.from(parent.context)
-                val view = layoutInflater
-                    .inflate(
-                        R.layout.list_item_roles,
-                        parent, false
-                    )
-                return ViewHolder(view)
+                 val binding = ListItemRolesBinding.inflate(layoutInflater,parent,false)
+                return ViewHolder(binding)
             }
         }
+    }
+
+    class RolesDiffCallback : DiffUtil.ItemCallback<Roles>(){
+        override fun areItemsTheSame(oldItem: Roles, newItem: Roles): Boolean {
+            return oldItem.eventRolesId == newItem.eventRolesId
+        }
+
+        override fun areContentsTheSame(oldItem: Roles, newItem: Roles): Boolean {
+            return oldItem == newItem
+        }
+
     }
 
 

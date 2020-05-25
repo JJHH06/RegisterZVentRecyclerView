@@ -37,7 +37,7 @@ interface GuestRoleDatabaseDao {
     @Query("SELECT * from event_guests_table WHERE eventGuestsId = :key")
     fun getGuest(key: Long): Guest?
 
-    @Query("SELECT g.*,r.role_name, r.order_of_role FROM event_guests_table as g LEFT JOIN event_roles_table as r ON g.role_of_guestID =r.eventRolesId ORDER BY order_of_role")
+    @Query("SELECT g.*,r.role_name, r.order_of_role FROM event_guests_table as g LEFT JOIN event_roles_table as r ON g.role_of_guestID =r.eventRolesId ORDER BY order_of_role DESC")
     fun getAllGuests(): LiveData<List<GuestWithRole>>
 
     @Query("SELECT g.*,r.role_name, r.order_of_role FROM event_guests_table as g LEFT JOIN event_roles_table as r ON g.role_of_guestID =r.eventRolesId ORDER BY order_of_role DESC")

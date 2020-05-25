@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="guest"
+            type="com.example.registerzvent.database.GuestWithRole" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/quality_image"
+            android:layout_width="71dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            tools:srcCompat="@drawable/priority_1"
+            app:guestPriorityImage="@{guest}"/>
+
+        <TextView
+            android:id="@+id/guest_name_string"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/quality_image"
+            app:layout_constraintTop_toTopOf="@+id/quality_image"
+            tools:text="Wednesday"
+            app:guestFormatName="@{guest}"/>
+
+        <TextView
+            android:id="@+id/guest_number_string"
+            android:layout_width="283dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="28dp"
+            app:layout_constraintEnd_toEndOf="@+id/guest_name_string"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guest_name_string"
+            app:layout_constraintTop_toBottomOf="@+id/guest_name_string"
+            tools:text="Excellent!!!"
+            app:guestPhone="@{guest}"/>
+
+        <TextView
+            android:id="@+id/guest_email_string"
+            android:layout_width="282dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/guest_name_string"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guest_name_string"
+            app:layout_constraintTop_toBottomOf="@+id/guest_name_string"
+            tools:text="Excellent!!!"
+            app:guestEmail="@{guest}"/>
+
+        <ImageView
+            android:id="@+id/is_registered_image"
+            android:layout_width="24dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guest_email_string"
+            app:layout_constraintTop_toBottomOf="@+id/guest_name_string"
+            app:srcCompat="@android:drawable/ic_delete"
+            app:isRegisteredImage="@{guest}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
