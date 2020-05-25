@@ -31,6 +31,7 @@
     <string name="role_name_format">Rol: %s</string>
     <string name="role_description_format">Descripcion: %s</string>
     <string name="role_order_format">Orden: %s</string>
+    <string name="guest_name_format">Nombre: %s</string>
 
 
 </resources>

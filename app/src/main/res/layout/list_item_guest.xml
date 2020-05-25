@@ -7,11 +7,15 @@
         <variable
             name="guest"
             type="com.example.registerzvent.database.GuestWithRole" />
+        <variable
+            name="clickListener"
+            type="com.example.registerzvent.views.guests.GuestListener"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(guest)}">
 
         <ImageView
             android:id="@+id/quality_image"

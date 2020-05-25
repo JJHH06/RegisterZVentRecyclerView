@@ -2,6 +2,7 @@ package com.example.registerzvent.views.guests
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 import com.example.registerzvent.R
@@ -47,7 +48,10 @@ class guestsFragment : Fragment() {
 
         binding.lifecycleOwner = this //Hace que se actualice el databinding cuando es utilizado
 
-        val adapter = GuestsAdapter()
+        val adapter = GuestsAdapter(GuestListener { eventGuestsId ->
+            Toast.makeText(context, "${eventGuestsId}", Toast.LENGTH_LONG).show()
+            moveToActivity(eventGuestsId)
+        })
         binding.guestsList.adapter = adapter
 
         viewModel.listaDeInvitados.observe(viewLifecycleOwner, Observer {
@@ -66,6 +70,11 @@ class guestsFragment : Fragment() {
         }
 
         return binding.root
+    }
+    private fun moveToActivity(id: Long){
+        val action = guestsFragmentDirections.actionGuestsFragmentToDeleteGuestFragment()
+        action.idRecyclerNewGuest = id
+        view?.findNavController()?.navigate(action)
     }
 
 

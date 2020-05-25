@@ -62,6 +62,10 @@
             android:id="@+id/action_guestsFragment_to_addguestsFragment"
             app:destination="@id/addguestsFragment"
             app:popUpTo="@id/guestsFragment" />
+        <action
+            android:id="@+id/action_guestsFragment_to_deleteGuestFragment"
+            app:destination="@id/deleteGuestFragment"
+            app:popUpTo="@id/guestsFragment" />
     </fragment>
     <fragment
         android:id="@+id/addguestsFragment"
@@ -112,5 +116,19 @@
         android:name="idRecyclerGuest"
         app:argType="long"
         android:defaultValue="0L"/>
+    </fragment>
+    <fragment
+        android:id="@+id/deleteGuestFragment"
+        android:name="com.example.registerzvent.views.delguest.DeleteGuestFragment"
+        android:label="DeleteGuestFragment"
+        tools:layout="@layout/fragment_delete_guest">
+        <action
+            android:id="@+id/action_deleteGuestFragment_to_guestsFragment"
+            app:destination="@id/guestsFragment"
+            app:popUpTo="@id/titleFragment" />
+        <argument
+            android:name="idRecyclerNewGuest"
+            app:argType="long"
+            android:defaultValue="1L" />
     </fragment>
 </navigation>
