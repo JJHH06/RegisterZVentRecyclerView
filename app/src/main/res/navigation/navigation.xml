@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.registerzvent.views.title.titleFragment"
+        android:label="Zvent App"
+        tools:layout="@layout/fragment_title">
+        <action
+            android:id="@+id/action_titleFragment_to_registryFragment"
+            app:destination="@id/registryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registryFragment"
+        android:name="com.example.registerzvent.views.registry.registryFragment"
+        android:label="Registrando"
+        tools:layout="@layout/fragment_registry">
+        <action
+            android:id="@+id/action_registryFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment"
+            app:popUpTo="@id/registryFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.example.registerzvent.views.results.resultsFragment"
+        android:label="Resultados"
+        tools:layout="@layout/fragment_results">
+        <action
+            android:id="@+id/action_resultsFragment_to_registryFragment"
+            app:destination="@id/registryFragment"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="registeredPeople"
+            app:argType="integer"
+            android:defaultValue="0"/>
+        <argument
+            android:name="invitedPeople"
+            app:argType="integer"
+            android:defaultValue="0"/>
+        <argument
+            android:name="invitedSummary"
+            app:argType="string"
+            android:defaultValue="0"/>
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.registerzvent.views.about.aboutFragment"
+        android:label="Acerca de"
+        tools:layout="@layout/fragment_about"/>
+    <fragment
+        android:id="@+id/guestsFragment"
+        android:name="com.example.registerzvent.views.guests.guestsFragment"
+        android:label="Invitados"
+        tools:layout="@layout/fragment_guests" >
+        <action
+            android:id="@+id/action_guestsFragment_to_addguestsFragment"
+            app:destination="@id/addguestsFragment"
+            app:popUpTo="@id/guestsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addguestsFragment"
+        android:name="com.example.registerzvent.views.addguests.addguestsFragment"
+        android:label="Agregar invitado"
+        tools:layout="@layout/fragment_addguests">
+        <action
+            android:id="@+id/action_addguestsFragment_to_guestsFragment"
+            app:destination="@id/guestsFragment"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/addrolesFragment"
+        android:name="com.example.registerzvent.views.addroles.addrolesFragment"
+        android:label="fragment_addroles"
+        tools:layout="@layout/fragment_addroles" >
+        <action
+            android:id="@+id/action_addrolesFragment_to_rolesFragment"
+            app:destination="@id/rolesFragment"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/rolesFragment"
+        android:name="com.example.registerzvent.views.roles.rolesFragment"
+        android:label="fragment_roles"
+        tools:layout="@layout/fragment_roles" >
+        <action
+            android:id="@+id/action_rolesFragment_to_addrolesFragment"
+            app:destination="@id/addrolesFragment"
+            app:popUpTo="@id/guestsFragment" />
+    </fragment>
+</navigation>

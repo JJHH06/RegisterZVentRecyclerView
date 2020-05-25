@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.android.navigation.ResultsFragment">
+
+    <data>
+        <variable
+            name="resultsViewModel"
+            type="com.example.registerzvent.views.results.ResultsViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="280dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="52dp"
+            android:text="@string/registry_result_title"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/total_invited_text_view"
+            android:layout_width="226dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="80dp"
+            android:text="@{@string/invited_format(String.valueOf(resultsViewModel.invitedPeople))}"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/total_registered_text_view"
+            android:layout_width="236dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="@{@string/registered_format(String.valueOf(resultsViewModel.registeredPeople))}"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total_invited_text_view" />
+
+        <Button
+            android:id="@+id/button_reset"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="140dp"
+            android:background="@color/colorAccent"
+            android:text="@string/result_reset_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total_registered_text_view" />
+
+        <Button
+            android:id="@+id/button_see_guests"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorAccent"
+            android:text="@string/see_guests_result_button_text"
+            app:layout_constraintEnd_toEndOf="@+id/button_reset"
+            app:layout_constraintTop_toBottomOf="@+id/button_reset" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

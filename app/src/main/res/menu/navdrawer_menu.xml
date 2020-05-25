@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/titleFragment"
+        android:icon="@drawable/home_icon"
+        android:title="@string/home_button" />
+    <item
+        android:id="@+id/aboutFragment"
+        android:icon="@android:drawable/ic_dialog_info"
+        android:title="@string/about_init_screen" />
+    <item
+        android:id="@+id/guestsFragment"
+        android:icon="?attr/actionModePasteDrawable"
+        android:title="@string/invited" />
+    <item
+        android:id="@+id/rolesFragment"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:title="@string/roles" />
+</menu>
